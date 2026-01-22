@@ -1,1 +1,2 @@
-This line is modified in branch one
+This line is resolved after conflict
+
