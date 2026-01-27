@@ -1,0 +1,6 @@
+INFO User logged in
+ERROR Database connection failed
+INFO Data fetched
+ERROR Timeout occurred
+WARNING Low memory
+ERROR Invalid input
