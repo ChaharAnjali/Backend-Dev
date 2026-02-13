@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+</head>
+<body>
+
+    <h1>My Photo Gallery 📸</h1>
+
+    <div>
+        <% images.forEach(function(image) { %>
+            <div style="margin-bottom:20px;">
+                <img src="/images/<%= image %>" width="300">
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+</html>
