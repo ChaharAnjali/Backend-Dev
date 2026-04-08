@@ -1,0 +1,5 @@
+2026-04-08T08:49:17.128Z | GET | /http://localhost:5000/test | 404 | 15ms
+2026-04-08T08:49:37.974Z | GET | /http://localhost:5000 | 404 | 1ms
+2026-04-08T08:49:42.609Z | GET | /http://localhost:5000 | 404 | 1ms
+2026-04-08T08:50:09.367Z | GET | /test | 200 | 6ms
+2026-04-08T08:50:09.480Z | GET | /favicon.ico | 404 | 2ms

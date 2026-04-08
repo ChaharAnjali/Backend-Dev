@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Dashboard</h2>
+<p>Welcome User</p>
+
+<h3 id="warning" style="color:red;"></h3>
+
+<script>
+    let warningTime = 60 * 1000; // show warning after 1 minute
+    let timeoutTime = 2 * 60 * 1000; // session expiry (2 min)
+
+    let warningTimer;
+    let logoutTimer;
+
+    function startTimers() {
+        // Warning timer
+        warningTimer = setTimeout(() => {
+            document.getElementById("warning").innerText =
+                "⚠️ Your session will expire soon!";
+        }, warningTime);
+
+        // Auto logout simulation
+        logoutTimer = setTimeout(() => {
+            alert("Session expired!");
+            window.location.href = "/dashboard"; // reload or redirect
+        }, timeoutTime);
+    }
+
+    function resetTimers() {
+        clearTimeout(warningTimer);
+        clearTimeout(logoutTimer);
+        document.getElementById("warning").innerText = "";
+
+        // Notify server to extend session
+        fetch("/keep-alive");
+
+        startTimers();
+    }
+
+    // Start timers initially
+    startTimers();
+
+    // Reset on user activity
+    document.addEventListener("click", resetTimers);
+    document.addEventListener("keypress", resetTimers);
+
+</script>
+
+</body>
+</html>
